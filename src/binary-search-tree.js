@@ -7,14 +7,14 @@ const { NotImplementedError } = require('../extensions/index.js');
 * using Node from extensions
 */
 class BinarySearchTree {
-  treeRoot = null;
+  BinaryTree = null;
 
   root() {
-    return this.treeRoot;   
+    return this.BinaryTree;   
   }
 
   add(data) {
-    this.treeRoot = createNewBranch(this.treeRoot, data);
+    this.BinaryTree = createNewBranch(this.BinaryTree, data);
 
     function createNewBranch(node, data) {
       if (!node) {
@@ -36,7 +36,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchTree(this.treeRoot, data);
+    return searchTree(this.BinaryTree, data);
 
     function searchTree(node, data) {
       if (!node) {
@@ -52,7 +52,7 @@ class BinarySearchTree {
   }
 
   find(data) {
-    return findNode(this.treeRoot, data);
+    return findNode(this.BinaryTree, data);
     
     function findNode(node, data) {
       if (!node) {
@@ -68,7 +68,7 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    this.treeRoot = removeNode(this.treeRoot, data);
+    this.BinaryTree = removeNode(this.BinaryTree, data);
     
     function removeNode(node, data) {
       if (!node) {
@@ -101,11 +101,11 @@ class BinarySearchTree {
   }
 
   min() {
-    if (!this.treeRoot) {
+    if (!this.BinaryTree) {
       return null;
     }
 
-    let min = this.treeRoot;
+    let min = this.BinaryTree;
     while (min.left) {
       min = min.left;
     }
@@ -114,11 +114,11 @@ class BinarySearchTree {
   }
 
   max() {
-    if (!this.treeRoot) {
+    if (!this.BinaryTree) {
       return null;
     }
 
-    let max = this.treeRoot;
+    let max = this.BinaryTree;
     while (max.right) {
       max = max.right;
     }
